@@ -33,7 +33,7 @@ axios.get(geoCodeUrl).then((response)=>{
 	console.log(`Location: ${response.data.results[0].locations[0].adminArea5} Region: ${response.data.results[0].locations[0].adminArea3} Country: ${response.data.results[0].locations[0].adminArea1}`);
 	var lat = response.data.results[0].locations[0].latLng.lat;
 	var lng = response.data.results[0].locations[0].latLng.lng;
-	var weatherUrl =  `https://api.darksky.net/forecast/8ecea963f903583e34008dfb2d46b352/${lat},${lng}?units=auto&lang=zh`;
+	var weatherUrl =  `https://api.darksky.net/forecast/8ecea963f903583e34008dfb2d46b352/${lat},${lng}?units=auto`;
 	console.log(weatherUrl);
 	return axios.get(weatherUrl);	
 }).then((response) => {
