@@ -41,20 +41,20 @@ axios.get(geoCodeUrl).then((response)=>{
 	var date = changeTime(response.data.currently.time,timezone);
 
 	console.log(typeof date);
-	console.log(`今天是: ${date}`);
-	console.log(`天气: ${response.data.currently.summary}`);
-	console.log(`温度: ${response.data.currently.temperature}`);
-	console.log(`体感温度: ${response.data.currently.apparentTemperature}\n\n`);
+	console.log(`Today is: ${date}`);
+	console.log(`Weather is: ${response.data.currently.summary}`);
+	console.log(`Temperature: ${response.data.currently.temperature}`);
+	console.log(`Feels like: ${response.data.currently.apparentTemperature}\n\n`);
 
 
 	for(var i = 0 ; i<response.data.daily.data.length ;i++){
 		var date = changeTime(response.data.daily.data[i].time, response.data.timezone);
 
 
-		console.log(`日期: ${date}`);
-		console.log(`天气: ${response.data.daily.data[i].summary}`);
-		console.log(`最高温度: ${response.data.daily.data[i].apparentTemperatureHigh}`);
-		console.log(`最低温度: ${response.data.daily.data[i].apparentTemperatureLow}`);
+		console.log(`Date: ${date}`);
+		console.log(`Weather: ${response.data.daily.data[i].summary}`);
+		console.log(`Daily High: ${response.data.daily.data[i].apparentTemperatureHigh}`);
+		console.log(`Daily Low: ${response.data.daily.data[i].apparentTemperatureLow}`);
 		console.log('\n\n')
 	}
 }).catch((e)=> {
